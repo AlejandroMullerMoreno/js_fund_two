@@ -4,29 +4,32 @@ function createRow(){
     let childDiv;
     let containerRow;
 
-    for (i=0; i < 14; i++){
-        containerRow = document.createElement("div");
-        containerRow.style.display = "flex";
-        for (i=0; i < 14; i++){
-            if (i === 0){
-                childDiv = document.createElement("div");
-                childDiv.style.backgroundColor = "red";
-                childDiv.style.width = "100px";
-                childDiv.style.height = "100px";
-                containerRow.appendChild(childDiv);
+    // for (i=0; i < 14; i++){
+    //     containerRow = document.createElement("div");
+    //     containerRow.style.width = "100vw";
+    //     containerRow.style.height = "100vh";
+    //     containerRow.style.display = "flex";
 
-            }
-        
+    for (j=0; j < 15; j++){
+        containerRow = document.createElement("div");
+        containerRow.style.width = "100vw";
+        containerRow.style.height = "100px";
+        // containerRow.style.backgroundColor = "black";
+        containerRow.style.display = "flex";
+        document.body.appendChild(containerRow);
+        console.log(j);
+        for (i=0; i < 15; i++){
             childDiv = document.createElement("div");
             childDiv.style.backgroundColor = "red";
-            childDiv.style.width = "100px";
-            childDiv.style.height = "100px";
+            childDiv.style.width = "80px";
+            childDiv.style.height = "80px";
             containerRow.appendChild(childDiv);
     
     
         }
-        containerDiv.appendChild(containerRow);
     }
+    //     containerDiv.appendChild(containerRow);
+    // }
 
     // const childDivTwo = document.createElement("div");
     // childDivTwo.style.backgroundColor = "red";
