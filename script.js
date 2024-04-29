@@ -10,15 +10,16 @@ function createRow(){
     //     containerRow.style.height = "100vh";
     //     containerRow.style.display = "flex";
 
-    for (j=0; j < 15; j++){
+    for (j=0; j < 16; j++){
         containerRow = document.createElement("div");
         containerRow.style.width = "100vw";
         containerRow.style.height = "100px";
         // containerRow.style.backgroundColor = "black";
         containerRow.style.display = "flex";
+        containerRow.style.gap = "10px";
         document.body.appendChild(containerRow);
         console.log(j);
-        for (i=0; i < 15; i++){
+        for (i=0; i < 16; i++){
             childDiv = document.createElement("div");
             childDiv.style.backgroundColor = "red";
             childDiv.style.width = "80px";
