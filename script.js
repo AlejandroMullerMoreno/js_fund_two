@@ -43,17 +43,21 @@ function createRow(){
 }
 
 function addHoverEventListeners(){
-    for (let idx=0; idx < 16; idx++){
-    let nextDiv = document.querySelector('div').childNodes[idx];
-    nextDiv.addEventListener('mouseover',() =>{
-        nextDiv.style.backgroundColor = "grey";
+    for (let numOfRow=7; numOfRow < 23; numOfRow++){
+        for (let idx=0; idx < 16; idx++){
+            let nextDiv = document.querySelector('body').childNodes[numOfRow].childNodes[idx];
+            console.log(nextDiv);
+            nextDiv.addEventListener('mouseover',() =>{
+                nextDiv.style.backgroundColor = "grey";
+        
+            })
+            nextDiv.addEventListener('mouseout',() =>{
+                nextDiv.style.backgroundColor = "red";
+        
+            })
+        }
 
-    })
-    nextDiv.addEventListener('mouseout',() =>{
-        nextDiv.style.backgroundColor = "red";
-
-    })
-}
+    }
 }
 createRow();
 addHoverEventListeners();
