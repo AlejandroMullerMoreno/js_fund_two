@@ -43,7 +43,7 @@ function createRow(){
 }
 
 function addHoverEventListeners(){
-    for (let numOfRow=7; numOfRow < 23; numOfRow++){
+    for (let numOfRow=9; numOfRow < 25; numOfRow++){
         for (let idx=0; idx < 16; idx++){
             let nextDiv = document.querySelector('body').childNodes[numOfRow].childNodes[idx];
             console.log(nextDiv);
