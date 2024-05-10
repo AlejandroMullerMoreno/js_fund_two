@@ -59,5 +59,23 @@ function addHoverEventListeners(){
 
     }
 }
+
+
+function addButtonEventHandling(){
+    const resetGridButton = document.querySelector('button');
+    resetGridButton.addEventListener('click',() => {
+        while (true){
+            let numOfDivs = prompt("How many divs do you want there to be on each side?");
+            if (numOfDivs > 100){
+                
+            }
+            else{
+                break;
+            }
+
+        }
+    })
+}
 createRow();
 addHoverEventListeners();
+addButtonEventHandling();
