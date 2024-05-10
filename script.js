@@ -43,15 +43,17 @@ function createRow(){
 }
 
 function addHoverEventListeners(){
-    const firstDiv = document.querySelector('div').childNodes[0];
-    firstDiv.addEventListener('mouseover',() =>{
-        firstDiv.style.backgroundColor = "grey";
+    for (let idx=0; idx < 16; idx++){
+    let nextDiv = document.querySelector('div').childNodes[idx];
+    nextDiv.addEventListener('mouseover',() =>{
+        nextDiv.style.backgroundColor = "grey";
 
     })
-    firstDiv.addEventListener('mouseout',() =>{
-        firstDiv.style.backgroundColor = "red";
+    nextDiv.addEventListener('mouseout',() =>{
+        nextDiv.style.backgroundColor = "red";
 
     })
+}
 }
 createRow();
 addHoverEventListeners();
