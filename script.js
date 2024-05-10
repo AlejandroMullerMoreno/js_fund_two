@@ -38,7 +38,20 @@ function createRow(){
     // childDivTwo.style.height = "100px";
     // containerDiv.appendChild(childDivTwo);
 
+
+
 }
 
+function addHoverEventListeners(){
+    const firstDiv = document.querySelector('div').childNodes[0];
+    firstDiv.addEventListener('mouseover',() =>{
+        firstDiv.style.backgroundColor = "grey";
 
+    })
+    firstDiv.addEventListener('mouseout',() =>{
+        firstDiv.style.backgroundColor = "red";
+
+    })
+}
 createRow();
+addHoverEventListeners();
