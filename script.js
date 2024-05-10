@@ -18,7 +18,7 @@ function createRow(){
         containerRow.style.display = "flex";
         containerRow.style.gap = "10px";
         document.body.appendChild(containerRow);
-        console.log(j);
+        // console.log(j);
         for (i=0; i < 16; i++){
             childDiv = document.createElement("div");
             childDiv.style.backgroundColor = "red";
@@ -46,7 +46,7 @@ function addHoverEventListeners(){
     for (let numOfRow=9; numOfRow < 25; numOfRow++){
         for (let idx=0; idx < 16; idx++){
             let nextDiv = document.querySelector('body').childNodes[numOfRow].childNodes[idx];
-            console.log(nextDiv);
+            // console.log(nextDiv);
             nextDiv.addEventListener('mouseover',() =>{
                 nextDiv.style.backgroundColor = "grey";
         
@@ -74,7 +74,28 @@ function addButtonEventHandling(){
             }
 
         }
+        deleteBoard();
     })
+    // createNewBoard();
+}
+
+
+function deleteBoard(){
+    for (let numOfRow=9; numOfRow < 25; numOfRow++){
+        for (let idx=0; idx < 16; idx++){
+            let nodeList = document.querySelector('body').childNodes
+            // let nextDiv = document.querySelector('body').childNodes[numOfRow].childNodes[idx];
+            // console.log(nextDiv);
+            nodeList.forEach((node) =>{
+                if (node instanceof HTMLDivElement){
+                    node.remove()
+                }
+
+            })
+        }
+
+    }
+
 }
 createRow();
 addHoverEventListeners();
