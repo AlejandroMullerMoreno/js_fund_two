@@ -77,6 +77,7 @@ function addButtonEventHandling(){
         }
         deleteBoard();
         createNewBoard(numOfDivs);
+        addNewHoverEventListeners(numOfDivs);
     })
 }
 
@@ -132,6 +133,24 @@ function createNewBoard(numOfDivs){
         }
     }
 
+}
+
+function addNewHoverEventListeners(numOfDivs){
+    for (let numOfRow=9; numOfRow < (numOfDivs + 9); numOfRow++){
+        for (let idx=0; idx < numOfDivs; idx++){
+            let nextDiv = document.querySelector('body').childNodes[numOfRow].childNodes[idx];
+            // console.log(nextDiv);
+            nextDiv.addEventListener('mouseover',() =>{
+                nextDiv.style.backgroundColor = "grey";
+        
+            })
+            nextDiv.addEventListener('mouseout',() =>{
+                nextDiv.style.backgroundColor = "red";
+        
+            })
+        }
+
+    }
 }
 createRow();
 addHoverEventListeners();
