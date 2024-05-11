@@ -64,8 +64,9 @@ function addHoverEventListeners(){
 function addButtonEventHandling(){
     const resetGridButton = document.querySelector('button');
     resetGridButton.addEventListener('click',() => {
+        let numOfDivs;
         while (true){
-            let numOfDivs = prompt("How many divs do you want there to be on each side?");
+            numOfDivs = prompt("How many divs do you want there to be on each side?");
             if (numOfDivs > 100){
                 
             }
@@ -75,8 +76,8 @@ function addButtonEventHandling(){
 
         }
         deleteBoard();
+        createNewBoard(numOfDivs);
     })
-    // createNewBoard();
 }
 
 
@@ -94,6 +95,41 @@ function deleteBoard(){
             })
         }
 
+    }
+
+}
+
+function createNewBoard(numOfDivs){
+
+    // get container div
+    const containerDiv = document.querySelector("#container");
+    let childDiv;
+    let containerRow;
+
+    // for (i=0; i < 14; i++){
+    //     containerRow = document.createElement("div");
+    //     containerRow.style.width = "100vw";
+    //     containerRow.style.height = "100vh";
+    //     containerRow.style.display = "flex";
+
+    for (j=0; j < numOfDivs; j++){
+        containerRow = document.createElement("div");
+        containerRow.style.width = "100vw";
+        containerRow.style.height = "100px";
+        // containerRow.style.backgroundColor = "black";
+        containerRow.style.display = "flex";
+        containerRow.style.gap = "10px";
+        document.body.appendChild(containerRow);
+        // console.log(j);
+        for (i=0; i < numOfDivs; i++){
+            childDiv = document.createElement("div");
+            childDiv.style.backgroundColor = "red";
+            childDiv.style.width = "80px";
+            childDiv.style.height = "80px";
+            containerRow.appendChild(childDiv);
+    
+    
+        }
     }
 
 }
